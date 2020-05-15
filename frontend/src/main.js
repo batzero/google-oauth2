@@ -5,6 +5,10 @@ import GAuth from 'vue-google-oauth2'
 //import GAuth from './plugins/gAuth'
 import installElement from './plugins/element/installElement.js'
 
+//store 
+import {store} from './store'
+
+
 Vue.config.productionTip = false
 Vue.use(installElement)
 
@@ -14,4 +18,6 @@ Vue.use(GAuth, {
 
 new Vue({
   render: h => h(App),
+
+  store 
 }).$mount('#app')
