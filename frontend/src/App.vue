@@ -34,15 +34,17 @@ export default {
   methods: {
 ...mapMutations({
 //addCounter:'addCounter' ,
-  subCounter:'subCounter'
+    subCounter:'subCounter'
   }),
   ...mapActions({
-  addCounter:'addCounter'
+    addCounter:'addCounter'
   })
   },
   computed: {
   ...mapGetters({
-  parentCounter : 'getCounter'
+    parentCounter : 'getCounter',
+    initState:'getInit',
+    signinState:'getSignIn'
   })
   },
 

@@ -35,19 +35,25 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations , mapActions } from 'vuex'
+
+
 /* eslint-disable */
 export default {
   name: "HelloWorld",
   props: {
     msg: String
   },
-  data() {
-    return {
-      isInit: false,
-      isSignIn: false
-    };
-  },
+  // data() {
+  //   return {
+  //     isInit: false,
+  //     isSignIn: false
+  //   };
+  // },
   methods: {
+
+
+    
     handleClickLogin() {
       this.$gAuth
         .getAuthCode()
@@ -99,6 +105,14 @@ export default {
     handleClickDisconnect() {
       window.location.href = `https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=${window.location.href}`;
     }
+  },
+  computed: {
+    ...mapGetters({
+    parentCounter : 'getCounter',
+    isInit:'getInit',
+    isSignIn:'getSignIn'
+  })
+  
   },
 
   created() {
